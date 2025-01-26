@@ -36,7 +36,7 @@ import { Icon } from "@iconify/vue";
           </fluent-tooltip>
           <a
             id="email-button"
-            href="mailto:xcubestudio@axing6.com"
+            href="mailto:xcubestudio@axing6.cn"
             class="px-2 py-1.5 rounded-sm transition hover:bg-neutral-200 dark:hover:bg-neutral-700"
           >
             <Icon icon="fluent:mail-20-filled" class="w-5 h-5" />
