@@ -51,7 +51,7 @@ function navigate(path: string) {
           Copyright © Xcube Studio 2022-2025
         </p>
       </div>
-      <div class="flex flex-col gap-2 items-start">
+      <div class="flex md:flex-auto flex-col gap-2 items-start">
         <p
           class="text-md select-none text-neutral-600 hover:text-neutral-400 dark:text-neutral-300 dark:hover:text-neutral-50 transition"
         >
@@ -66,7 +66,7 @@ function navigate(path: string) {
           <HyperlinkButton Content="消息" :OnClick="() => navigate('/news')" />
         </div>
       </div>
-      <div class="flex flex-col gap-2 items-start">
+      <div class="flex md:flex-auto flex-col gap-2 items-start">
         <p
           class="text-md select-none text-neutral-600 hover:text-neutral-400 dark:text-neutral-300 dark:hover:text-neutral-50 transition"
         >
@@ -87,7 +87,7 @@ function navigate(path: string) {
           />
         </div>
       </div>
-      <div class="flex flex-col gap-2 items-start">
+      <div class="flex md:flex-auto flex-col gap-2 items-start">
         <p
           class="text-md select-none text-neutral-600 hover:text-neutral-400 dark:text-neutral-300 dark:hover:text-neutral-50 transition"
         >
