@@ -8,4 +8,5 @@ document.title = "Xcube Studio • 项目";
   </main>
 </template>
 
-<style></style>
+<style>
+</style>

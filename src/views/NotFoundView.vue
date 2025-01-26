@@ -1,6 +1,6 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
-document.title = "Xcube Studio • 未找到";
+document.title = "Xcube Studio • 未找到页面";
 </script>
 
 <template>
