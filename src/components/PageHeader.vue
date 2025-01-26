@@ -10,14 +10,14 @@ onMounted(() => {
   var navigation = document.getElementById("navigation");
   var tablist = navigation as Tablist;
   var baseMethod = tablist.activeidChanged;
-  var path = location.pathname.split("/")[1];
+  var path = location.pathname.substring(1);
 
-  if (path != "" && !router.hasRoute(path)) tablist.activeid = "notfound-table";
+  if (path != "" && !router.hasRoute(path)) tablist.activeid = "not-found-table";
   else tablist.activeid = path + "-table";
 
   tablist.activeidChanged = function (oldValue: string, newValue: string) {
     baseMethod.call(tablist, oldValue, newValue);
-    router.push("/" + newValue.split("-")[0]);
+    router.push("/" + newValue.replace("-table", ""));
   };
 });
 
@@ -290,7 +290,7 @@ const navigationCloseClick = () => {
                     <p>消息</p>
                   </li>
                 </fluent-tab>
-                <fluent-tab id="notfound-table" class="hidden"> </fluent-tab>
+                <fluent-tab id="not-found-table" class="hidden"> </fluent-tab>
               </fluent-tablist>
               <div></div>
             </div>

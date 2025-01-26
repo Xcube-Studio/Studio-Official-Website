@@ -153,10 +153,11 @@ import { Icon } from "@iconify/vue";
         <div class="flex">
           <div class="flex flex-col gap-2">
             <a
+              href="/fluent-launcher/privacy"
               style="margin-left: -12px"
               class="flex rounded-sm gap-1 px-3 py-1 select-none hover:bg-neutral-200 dark:hover:bg-neutral-700 text-blue-900 active:text-blue-800 dark:text-blue-200 dark:active:text-blue-300 transition"
             >
-              隐私政策
+              Fluent Launcher 隐私政策
             </a>
           </div>
           <div class="grow" />
