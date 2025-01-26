@@ -141,6 +141,7 @@ const navigationCloseClick = () => {
 
       <div class="gap-2 justify-end sm:flex hidden">
         <a
+          href="https://github.com/Xcube-Studio/Studio-Official-Website/issues"
           id="report-button"
           class="px-2 py-1.5 rounded-sm transition hover:bg-neutral-200 dark:hover:bg-neutral-700"
         >
@@ -155,7 +156,7 @@ const navigationCloseClick = () => {
         </fluent-tooltip>
         <a
           id="code-button"
-          href="https://github.com/Xcube-Studio"
+          href="https://github.com/Xcube-Studio/Studio-Official-Website"
           class="px-2 py-1.5 rounded-sm transition hover:bg-neutral-200 dark:hover:bg-neutral-700"
         >
           <Icon icon="fluent:code-20-regular" class="w-5 h-5" />
@@ -201,6 +202,7 @@ const navigationCloseClick = () => {
             <div class="p-1 flex bg-neutral-100 dark:bg-neutral-800">
               <div class="gap-2 py-3 px-3 flex justify-start">
                 <a
+                  href="https://github.com/Xcube-Studio/Studio-Official-Website/issues"
                   id="in-report-button"
                   class="px-2 py-1.5 rounded-sm transition hover:bg-neutral-200 dark:hover:bg-neutral-700"
                 >
@@ -214,8 +216,8 @@ const navigationCloseClick = () => {
                   报告问题
                 </fluent-tooltip>
                 <a
+                  href="https://github.com/Xcube-Studio/Studio-Official-Website"
                   id="in-code-button"
-                  href="https://github.com/Xcube-Studio"
                   class="px-2 py-1.5 rounded-sm transition hover:bg-neutral-200 dark:hover:bg-neutral-700"
                 >
                   <Icon icon="fluent:code-20-regular" class="w-5 h-5" />
