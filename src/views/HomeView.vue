@@ -1,9 +1,10 @@
 <script setup lang="ts">
+import AtSomeOne from "@/components/AtSomeOne.vue";
+import TokenItem from "@/components/TokenItem.vue";
 import { Icon } from "@iconify/vue";
 document.title = "Xcube Studio • 主页";
 
-const currentWindow : Window & typeof globalThis = window;
-
+const currentWindow: Window & typeof globalThis = window;
 </script>
 
 <template>
@@ -52,41 +53,19 @@ const currentWindow : Window & typeof globalThis = window;
       </div>
 
       <div class="flex flex-wrap justify-center gap-2">
-        <div
-          class="flex gap-2 items-center text-blue-900 dark:text-blue-300 bg-neutral-200/40 select-none dark:bg-neutral-700/40 px-4 py-0.5 rounded-xl font-semibold"
-        >
-          <Icon icon="fluent:cube-20-regular" class="w-6 h-6" />
-          Minecraft
-        </div>
-        <div
-          class="flex gap-2 items-center transition text-blue-900 dark:text-blue-300 bg-neutral-200/40 select-none dark:bg-neutral-700/40 px-4 py-0.5 rounded-xl"
-        >
-          <Icon icon="fluent:code-cs-16-regular" class="w-6 h-6" />
-        </div>
-        <div
-          class="flex gap-2 items-center text-blue-900 dark:text-blue-300 bg-neutral-200/40 select-none dark:bg-neutral-700/40 px-4 py-0.5 rounded-xl font-semibold"
-        >
-          <Icon icon="fluent:window-dev-tools-20-regular" class="w-6 h-6" />
-          Windows Develop
-        </div>
-        <div
-          class="flex gap-2 items-center text-blue-900 dark:text-blue-300 bg-neutral-200/40 select-none dark:bg-neutral-700/40 px-4 py-0.5 rounded-xl font-semibold"
-        >
-          <Icon icon="fluent:app-generic-20-filled" class="w-6 h-6" />
-          Desktop
-        </div>
-        <div
-          class="flex gap-2 items-center text-blue-900 dark:text-blue-300 bg-neutral-200/40 select-none dark:bg-neutral-700/40 px-4 py-0.5 rounded-xl font-semibold"
-        >
-          <Icon icon="fluent:code-20-regular" class="w-6 h-6" />
-          Open Source
-        </div>
-        <div
-          class="flex gap-2 items-center text-blue-900 dark:text-blue-300 bg-neutral-200/40 select-none dark:bg-neutral-700/40 px-4 py-0.5 rounded-xl font-semibold"
-        >
-          <Icon icon="fluent:design-ideas-20-filled" class="w-6 h-6" />
-          Fluent Design
-        </div>
+        <TokenItem Glyph="fluent:cube-20-regular" Token="Minecraft" />
+        <TokenItem Glyph="fluent:code-cs-16-regular" />
+        <TokenItem
+          Glyph="fluent:window-dev-tools-20-regular"
+          Token="Windows Develop"
+        />
+        <TokenItem Glyph="fluent:app-generic-20-filled" Token="Desktop" />
+        <TokenItem Glyph="fluent:slide-text-20-regular" Token="MIT" />
+        <TokenItem Glyph="fluent:code-20-regular" Token="Open Source" />
+        <TokenItem
+          Glyph="fluent:design-ideas-20-filled"
+          Token="Fluent Design"
+        />
       </div>
     </div>
 
@@ -118,76 +97,48 @@ const currentWindow : Window & typeof globalThis = window;
           </p>
 
           <div class="flex flex-wrap justify-left gap-2 max-w-100 mt-4">
-            <a
+            <TokenItem
+              Glyph="fluent:store-microsoft-20-filled"
+              Token="Microsoft Store"
               href="https://apps.microsoft.com/detail/9P4NQQXQ942P?hl=zh-cn&gl=CN&ocid=pdpshare"
-              class="flex gap-2 items-center hover:underline text-blue-900 dark:text-blue-300 bg-neutral-200/40 select-none dark:bg-neutral-700/40 px-4 py-0.5 rounded-xl font-semibold"
-            >
-              <Icon icon="fluent:store-microsoft-20-filled" class="w-6 h-6" />
-              Microsoft Store
-            </a>
-            <a
+            />
+            <TokenItem
               href="https://github.com/Xcube-Studio/Natsurainko.FluentLauncher"
-              class="flex gap-2 items-center hover:underline text-blue-900 dark:text-blue-300 bg-neutral-200/40 select-none dark:bg-neutral-700/40 px-4 py-0.5 rounded-xl font-semibold"
-            >
-              <Icon icon="mdi:github" class="w-6 h-6" />
-              GitHub
-            </a>
-            <a
+              Glyph="mdi:github"
+              Token="GitHub"
+            />
+            <TokenItem
               href="https://github.com/Xcube-Studio/Natsurainko.FluentLauncher/stargazers"
-              class="flex gap-2 items-center hover:underline text-blue-900 dark:text-blue-300 bg-neutral-200/40 select-none dark:bg-neutral-700/40 px-4 py-0.5 rounded-xl font-semibold"
-            >
-              <Icon icon="fluent:star-20-filled" class="w-6 h-6" />
-              300+
-            </a>
-            <a
+              Glyph="fluent:star-20-filled"
+              Token="300+"
+            />
+            <TokenItem
               href="https://github.com/Xcube-Studio/Natsurainko.FluentLauncher/blob/main/LICENSE"
-              class="flex gap-2 items-center hover:underline text-blue-900 dark:text-blue-300 bg-neutral-200/40 select-none dark:bg-neutral-700/40 px-4 py-0.5 rounded-xl font-semibold"
-            >
-              <Icon icon="fluent:slide-text-20-regular" class="w-6 h-6" />
-              MIT
-            </a>
-            <div
-              class="flex gap-2 items-center text-blue-900 dark:text-blue-300 bg-neutral-200/40 select-none dark:bg-neutral-700/40 px-4 py-0.5 rounded-xl"
-            >
-              <Icon icon="fluent:code-cs-16-regular" class="w-6 h-6" />
-            </div>
-            <div
-              class="flex gap-2 items-center text-blue-900 dark:text-blue-300 bg-neutral-200/40 select-none dark:bg-neutral-700/40 px-4 py-0.5 rounded-xl font-semibold"
-            >
-              <Icon icon="fluent:app-generic-20-filled" class="w-6 h-6" />
-              Windows 11
-            </div>
-            <div
-              class="flex gap-2 items-center text-blue-900 dark:text-blue-300 bg-neutral-200/40 select-none dark:bg-neutral-700/40 px-4 py-0.5 rounded-xl font-semibold"
-            >
-              <Icon icon="fluent:code-20-regular" class="w-6 h-6" />
-              Open Source
-            </div>
-            <div
-              class="flex gap-2 items-center text-blue-900 dark:text-blue-300 bg-neutral-200/40 select-none dark:bg-neutral-700/40 px-4 py-0.5 rounded-xl font-semibold"
-            >
-              <Icon icon="fluent:design-ideas-20-filled" class="w-6 h-6" />
-              Fluent Design
-            </div>
+              Glyph="fluent:slide-text-20-regular"
+              Token="MIT"
+            />
+            <TokenItem Glyph="fluent:code-cs-16-regular" />
+            <TokenItem
+              Glyph="fluent:app-generic-20-filled"
+              Token="Windows 11"
+            />
+            <TokenItem Glyph="fluent:code-20-regular" Token="Open Source" />
+            <TokenItem
+              Glyph="fluent:design-ideas-20-filled"
+              Token="Fluent Design"
+            />
           </div>
 
           <div
             class="items-center hidden md:flex text-md text-neutral-700 dark:text-neutral-400 max-w-3xl mt-8"
           >
             目前主要由
-            <a
+            <AtSomeOne
+              Name="natsurainko"
               href="https://github.com/natsurainko"
-              class="flex mx-2 gap-2 items-center hover:underline text-blue-900 dark:text-blue-300 bg-neutral-200/40 select-none dark:bg-neutral-700/40 px-2 rounded-lg font-semibold"
-            >
-              @natsurainko
-            </a>
+            />
             和
-            <a
-              href="https://github.com/gaviny82"
-              class="flex mx-2 gap-2 items-center hover:underline text-blue-900 dark:text-blue-300 bg-neutral-200/40 select-none dark:bg-neutral-700/40 px-2 rounded-lg font-semibold"
-            >
-              @gaviny82
-            </a>
+            <AtSomeOne Name="gaviny82" href="https://github.com/gaviny82" />
             进行维护
           </div>
         </div>
@@ -230,69 +181,40 @@ const currentWindow : Window & typeof globalThis = window;
           </p>
 
           <div class="flex flex-wrap justify-left gap-2 max-w-100 mt-4">
-            <a
+            <TokenItem
               href="https://github.com/Xcube-Studio/Natsurainko.FluentCore"
-              class="flex gap-2 items-center hover:underline text-blue-900 dark:text-blue-300 bg-neutral-200/40 select-none dark:bg-neutral-700/40 px-4 py-0.5 rounded-xl font-semibold"
-            >
-              <Icon icon="mdi:github" class="w-6 h-6" />
-              GitHub
-            </a>
-            <a
+              Glyph="mdi:github"
+              Token="GitHub"
+            />
+            <TokenItem
               href="https://github.com/Xcube-Studio/Natsurainko.FluentCore/stargazers"
-              class="flex gap-2 items-center hover:underline text-blue-900 dark:text-blue-300 bg-neutral-200/40 select-none dark:bg-neutral-700/40 px-4 py-0.5 rounded-xl font-semibold"
-            >
-              <Icon icon="fluent:star-20-filled" class="w-6 h-6" />
-              30+
-            </a>
-            <a
+              Glyph="fluent:star-20-filled"
+              Token="30+"
+            />
+            <TokenItem
               href="https://github.com/Xcube-Studio/Natsurainko.FluentCore/blob/main/LICENSE"
-              class="flex gap-2 items-center hover:underline text-blue-900 dark:text-blue-300 bg-neutral-200/40 select-none dark:bg-neutral-700/40 px-4 py-0.5 rounded-xl font-semibold"
-            >
-              <Icon icon="fluent:slide-text-20-regular" class="w-6 h-6" />
-              MIT
-            </a>
-            <div
-              class="flex gap-2 items-center text-blue-900 dark:text-blue-300 bg-neutral-200/40 select-none dark:bg-neutral-700/40 px-4 py-0.5 rounded-xl"
-            >
-              <Icon icon="fluent:code-cs-16-regular" class="w-6 h-6" />
-            </div>
-            <div
-              class="flex gap-2 items-center text-blue-900 dark:text-blue-300 bg-neutral-200/40 select-none dark:bg-neutral-700/40 px-4 py-0.5 rounded-xl font-semibold"
-            >
-              <Icon icon="fluent:app-generic-20-filled" class="w-6 h-6" />
-              .NET 8
-            </div>
-            <div
-              class="flex gap-2 items-center text-blue-900 dark:text-blue-300 bg-neutral-200/40 select-none dark:bg-neutral-700/40 px-4 py-0.5 rounded-xl font-semibold"
-            >
-              <Icon icon="fluent:window-console-20-filled" class="w-6 h-6" />
-              AOT Compatible
-            </div>
-            <div
-              class="flex gap-2 items-center text-blue-900 dark:text-blue-300 bg-neutral-200/40 select-none dark:bg-neutral-700/40 px-4 py-0.5 rounded-xl font-semibold"
-            >
-              <Icon icon="fluent:code-20-regular" class="w-6 h-6" />
-              Open Source
-            </div>
+              Glyph="fluent:slide-text-20-regular"
+              Token="MIT"
+            />
+            <TokenItem Glyph="fluent:code-cs-16-regular" />
+            <TokenItem Glyph="fluent:app-generic-20-filled" Token=".NET 8" />
+            <TokenItem
+              Glyph="fluent:window-console-20-filled"
+              Token="AOT Compatible"
+            />
+            <TokenItem Glyph="fluent:code-20-regular" Token="Open Source" />
           </div>
 
           <div
             class="items-center hidden md:flex text-md text-neutral-700 dark:text-neutral-400 max-w-3xl mt-8"
           >
             目前主要由
-            <a
+            <AtSomeOne
+              Name="natsurainko"
               href="https://github.com/natsurainko"
-              class="flex mx-2 gap-2 items-center hover:underline text-blue-900 dark:text-blue-300 bg-neutral-200/40 select-none dark:bg-neutral-700/40 px-2 rounded-lg font-semibold"
-            >
-              @natsurainko
-            </a>
+            />
             和
-            <a
-              href="https://github.com/gaviny82"
-              class="flex mx-2 gap-2 items-center hover:underline text-blue-900 dark:text-blue-300 bg-neutral-200/40 select-none dark:bg-neutral-700/40 px-2 rounded-lg font-semibold"
-            >
-              @gaviny82
-            </a>
+            <AtSomeOne Name="gaviny82" href="https://github.com/gaviny82" />
             进行维护
           </div>
         </div>
@@ -325,7 +247,10 @@ const currentWindow : Window & typeof globalThis = window;
         </p>
 
         <fluent-button
-          @click="() => currentWindow.location.href ='https://qm.qq.com/q/8AKSiUUrn2'"
+          @click="
+            () =>
+              (currentWindow.location.href = 'https://qm.qq.com/q/8AKSiUUrn2')
+          "
           appearance="primary"
           class="select-none rounded-md px-4 py-1.5 shadow"
         >

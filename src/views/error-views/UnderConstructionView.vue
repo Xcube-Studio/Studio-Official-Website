@@ -15,7 +15,7 @@ document.title = "Xcube Studio • 建设中";
 
     <div class="flex flex-col items-start gap-4">
       <p class="text-4xl sm:text-6xl font-bold">
-        该页面该正在建设中，<br class="sm:hidden" />请耐心等待
+        此页面正在建设，<br class="sm:hidden" />请耐心等待
       </p>
       <a
         class="flex text-md sm:text-xl gap-1 items-center text-blue-900 dark:text-blue-300 bg-neutral-200/40 select-none dark:bg-neutral-700/40 px-4 py-1 rounded-lg font-semibold"

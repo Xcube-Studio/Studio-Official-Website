@@ -6,19 +6,31 @@ import PageFooter from "./components/PageFooter.vue";
 import "@fluentui/web-components/button.js";
 import { initThemeService } from "./services/ThemeService";
 import {
-  DrawerDefinition, TablistDefinition, MenuDefinition
-  , MenuButtonDefinition, MenuItemDefinition, TooltipDefinition
-  ,ButtonDefinition, DividerDefinition, FluentDesignSystem
+  DrawerDefinition,
+  DrawerBodyDefinition,
+  TabDefinition,
+  TablistDefinition,
+  MenuDefinition,
+  MenuButtonDefinition,
+  MenuItemDefinition,
+  TooltipDefinition,
+  ButtonDefinition,
+  DividerDefinition,
+  FluentDesignSystem,
+  MenuListDefinition,
 } from "@fluentui/web-components";
 
 ButtonDefinition.define(FluentDesignSystem.registry);
 MenuDefinition.define(FluentDesignSystem.registry);
+MenuListDefinition.define(FluentDesignSystem.registry);
 MenuButtonDefinition.define(FluentDesignSystem.registry);
 MenuItemDefinition.define(FluentDesignSystem.registry);
 TooltipDefinition.define(FluentDesignSystem.registry);
 ButtonDefinition.define(FluentDesignSystem.registry);
 DividerDefinition.define(FluentDesignSystem.registry);
 DrawerDefinition.define(FluentDesignSystem.registry);
+DrawerBodyDefinition.define(FluentDesignSystem.registry);
+TabDefinition.define(FluentDesignSystem.registry);
 TablistDefinition.define(FluentDesignSystem.registry);
 
 initThemeService(document.documentElement);
