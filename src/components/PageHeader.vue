@@ -2,22 +2,26 @@
 import { currentTheme, switchTheme } from "@/services/ThemeService";
 import type { Drawer, Tablist } from "@fluentui/web-components";
 import { Icon } from "@iconify/vue";
-import { onMounted } from "vue";
+import { onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
 const router = useRouter();
+
+const headerIcon = ref<string>("/xcube-studio.png");
+const header = ref<string>("Xcube Studio");
 
 onMounted(() => {
   var navigation = document.getElementById("navigation");
   var tablist = navigation as Tablist;
   var baseMethod = tablist.activeidChanged;
-  var path = location.pathname.split("/")[1];
+  var path = location.pathname.substring(1);
 
-  if (path != "" && !router.hasRoute(path)) tablist.activeid = "notfound-table";
+  if (path != "" && !router.hasRoute(path))
+    tablist.activeid = "not-found-table";
   else tablist.activeid = path + "-table";
 
   tablist.activeidChanged = function (oldValue: string, newValue: string) {
     baseMethod.call(tablist, oldValue, newValue);
-    router.push("/" + newValue.split("-")[0]);
+    router.push("/" + newValue.replace("-table", ""));
   };
 });
 
@@ -30,6 +34,18 @@ const navigationCloseClick = () => {
   var drawer = document.getElementById("drawer-default");
   (drawer as Drawer).hide();
 };
+
+router.beforeEach((to, from, next) => {
+  if (to.path.includes("/fluent-launcher/")) {
+    headerIcon.value = "/fluent-launcher-icon.png";
+    header.value = "Fluent Launcher";
+  } else {
+    headerIcon.value = "/xcube-studio.png";
+    header.value = "Xcube Studio";
+  }
+
+  next();
+});
 </script>
 
 <template>
@@ -40,13 +56,12 @@ const navigationCloseClick = () => {
       <div class="flex gap-4 flex-none">
         <img
           class="border-1 border-neutral-600 rounded-sm w-8 h-8"
-          src="/xcube-studio.png"
+          :src="headerIcon"
         />
         <p
           class="text-xl select-none font-semibold text-neutral-700 dark:text-white hover:text-neutral-500 dark:hover:text-neutral-300 transition"
-        >
-          Xcube Studio
-        </p>
+          v-text="header"
+        ></p>
       </div>
 
       <div
@@ -290,7 +305,7 @@ const navigationCloseClick = () => {
                     <p>消息</p>
                   </li>
                 </fluent-tab>
-                <fluent-tab id="notfound-table" class="hidden"> </fluent-tab>
+                <fluent-tab id="not-found-table" class="hidden"> </fluent-tab>
               </fluent-tablist>
               <div></div>
             </div>

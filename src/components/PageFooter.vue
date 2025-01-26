@@ -1,5 +1,8 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
+import { useRouter } from "vue-router";
+
+const router = useRouter();
 </script>
 
 <template>
@@ -78,21 +81,21 @@ import { Icon } from "@iconify/vue";
         <div class="flex">
           <div class="flex flex-col gap-2">
             <a
-              href="/"
+              @click="() => router.push('/')"
               style="margin-left: -12px"
               class="flex rounded-sm gap-1 px-3 py-1 select-none justify-start hover:bg-neutral-200 dark:hover:bg-neutral-700 text-blue-900 active:text-blue-800 dark:text-blue-200 dark:active:text-blue-300 transition"
             >
               主页
             </a>
             <a
-              href="/projects"
+              @click="() => router.push('/projects')"
               style="margin-left: -12px"
               class="flex rounded-sm gap-1 px-3 py-1 select-none hover:bg-neutral-200 dark:hover:bg-neutral-700 text-blue-900 active:text-blue-800 dark:text-blue-200 dark:active:text-blue-300 transition"
             >
               项目
             </a>
             <a
-              href="/news"
+              @click="() => router.push('/news')"
               style="margin-left: -12px"
               class="flex rounded-sm gap-1 px-3 py-1 select-none hover:bg-neutral-200 dark:hover:bg-neutral-700 text-blue-900 active:text-blue-800 dark:text-blue-200 dark:active:text-blue-300 transition"
             >
@@ -153,10 +156,11 @@ import { Icon } from "@iconify/vue";
         <div class="flex">
           <div class="flex flex-col gap-2">
             <a
+              @click="() => router.push('/fluent-launcher/privacy')"
               style="margin-left: -12px"
               class="flex rounded-sm gap-1 px-3 py-1 select-none hover:bg-neutral-200 dark:hover:bg-neutral-700 text-blue-900 active:text-blue-800 dark:text-blue-200 dark:active:text-blue-300 transition"
             >
-              隐私政策
+              Fluent Launcher 隐私政策
             </a>
           </div>
           <div class="grow" />
