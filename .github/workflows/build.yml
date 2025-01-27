@@ -1,0 +1,36 @@
+name: Build
+on:
+  workflow_dispatch:
+  push:
+jobs:
+  Build:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4.2.2
+      - name: Setup Node.js environment
+        uses: actions/setup-node@v4.2.0
+      - name: Build
+        run: | 
+              npm install
+              npm run build
+      - name: upload dist to OSS
+        uses: fangbinwei/aliyun-oss-website-action@v1
+        with:
+            accessKeyId: ${{ secrets.ALIYUN_ACCESS_KEY_ID }}
+            accessKeySecret: ${{ secrets.ALIYUN_ACCESS_KEY_SECRET }}
+            bucket: your-bucket-name
+            endpoint: oss-cn-shanghai.aliyuncs.com
+            folder: ./dist
+            skipSetting: True
+      - name: Push
+        run: |
+          git checkout -b "Studio-Official-Website/${{github.sha}}"
+          git add -a
+          git commit -m "Studio-Official-Website/${{github.sha}} From CI"
+          git push origin "Studio-Official-Website/${{github.sha}}"
+      - name: Call Deployment
+        run: curl -X POST "${{ secrets.CLOUDFLARE_WEBHOOK }}"
+      
+  
+  
