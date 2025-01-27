@@ -19,7 +19,7 @@ jobs:
         with:
             accessKeyId: ${{ secrets.ALIYUN_ACCESS_KEY_ID }}
             accessKeySecret: ${{ secrets.ALIYUN_ACCESS_KEY_SECRET }}
-            bucket: your-bucket-name
+            bucket: ${{ secrets.ALIYUN_BUCKET_NAME }}
             endpoint: oss-cn-shanghai.aliyuncs.com
             folder: ./dist
             skipSetting: True
