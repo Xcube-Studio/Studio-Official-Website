@@ -25,10 +25,9 @@ jobs:
             skipSetting: True
       - name: Push
         run: |
-          git checkout -b "Studio-Official-Website/${{github.sha}}"
           git add *
           git commit -m "Studio-Official-Website/${{github.sha}} From CI"
-          git push origin "Studio-Official-Website/${{github.sha}}"
+          git push origin main
       - name: Call Deployment
         run: curl -X POST "${{ secrets.CLOUDFLARE_WEBHOOK }}"
       
