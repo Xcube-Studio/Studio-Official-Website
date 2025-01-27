@@ -25,7 +25,7 @@ jobs:
             skipSetting: True
       - name: Replace to ALICDN
         run: |
-          sed -i 's#./#https://xcubestudio.net.cubestructor.cc/#g' ./dist/index.html
+          sed -i 's#\.\/#https\:\/\/xcubestudio.net.cubestructor.cc\/#g' ./dist/index.html
       - name: Push
         continue-on-error: true
         run: |
