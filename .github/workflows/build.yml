@@ -14,7 +14,7 @@ jobs:
         run: | 
               npm install
               npm run build
-      - name: upload dist to OSS
+      - name: Upload dist to OSS
         uses: fangbinwei/aliyun-oss-website-action@v1
         with:
             accessKeyId: ${{ secrets.ALIYUN_ACCESS_KEY_ID }}
@@ -23,7 +23,11 @@ jobs:
             endpoint: oss-cn-shanghai.aliyuncs.com
             folder: ./dist
             skipSetting: True
+      - name: Replace to ALICDN
+        run: |
+          sed -i 's#./#https://xcubestudio.net.cubestructor.cc/#g' ./dist/index.html
       - name: Push
+        continue-on-error: true
         run: |
           git config --global user.email "github-actions[bot]@users.noreply.github.com"
           git config --global user.name "GitHub-actions[bot]"
