@@ -25,6 +25,8 @@ jobs:
             skipSetting: True
       - name: Push
         run: |
+          git config --global user.email "github-actions[bot]@users.noreply.github.com"
+          git config --global user.name "GitHub-actions[bot]"
           git add *
           git commit -m "Studio-Official-Website/${{github.sha}} From CI"
           git push origin main
