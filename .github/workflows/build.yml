@@ -26,7 +26,7 @@ jobs:
       - name: Push
         run: |
           git checkout -b "Studio-Official-Website/${{github.sha}}"
-          git add -a
+          git add *
           git commit -m "Studio-Official-Website/${{github.sha}} From CI"
           git push origin "Studio-Official-Website/${{github.sha}}"
       - name: Call Deployment
