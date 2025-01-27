@@ -59,7 +59,7 @@ function navigate(path: string) {
     class="px-4 py-4 flex items-center gap-4 bg-neutral-100/80 dark:bg-neutral-800/80 border-b-neutral-200 border-b-1 dark:border-b-0 backdrop-blur-lg"
   >
     <div class="flex gap-4">
-      <div class="flex gap-4 flex-none">
+      <div class="flex gap-4 flex-none items-center">
         <img
           class="border-1 border-neutral-600 rounded-sm w-8 h-8"
           :src="headerIcon"
