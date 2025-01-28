@@ -5,6 +5,7 @@ import { Icon } from "@iconify/vue";
 import { onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
 import IconButton from "./IconButton.vue";
+import { changeFavicon } from "@/utils/utils";
 const router = useRouter();
 
 const headerIcon = ref<string>("/xcube-studio.png");
@@ -40,9 +41,13 @@ router.beforeEach((to, from, next) => {
   if (to.path.includes("/fluent-launcher/")) {
     headerIcon.value = "/fluent-launcher-icon.png";
     header.value = "Fluent Launcher";
+
+    changeFavicon("/fluent-launcher-icon.png");
   } else {
     headerIcon.value = "/xcube-studio.png";
     header.value = "Xcube Studio";
+
+    changeFavicon("/xcube-studio.png");
   }
 
   next();
@@ -56,7 +61,7 @@ function navigate(path: string) {
 
 <template>
   <header
-    class="px-4 py-4 flex items-center gap-4 bg-neutral-100/80 dark:bg-neutral-800/80 border-b-neutral-200 border-b-1 dark:border-b-0 backdrop-blur-lg"
+    class="px-4 py-4 flex items-center gap-4 bg-neutral-100/80 dark:bg-neutral-800/80 border-neutral-200 dark:border-neutral-800 border-b-1 backdrop-blur-lg"
   >
     <div class="flex gap-4">
       <div class="flex gap-4 flex-none items-center">

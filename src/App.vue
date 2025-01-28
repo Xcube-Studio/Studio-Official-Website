@@ -19,6 +19,7 @@ import {
   FluentDesignSystem,
   MenuListDefinition,
 } from "@fluentui/web-components";
+import AnnounceBar from "./components/AnnounceBar.vue";
 
 ButtonDefinition.define(FluentDesignSystem.registry);
 MenuDefinition.define(FluentDesignSystem.registry);
@@ -43,6 +44,8 @@ initThemeService(document.documentElement);
       <RouterView class="bg-neutral-50 dark:bg-neutral-900" />
       <PageFooter />
     </div>
-    <PageHeader class="fixed" style="width: 100%" />
+    <div class="fixed" style="width: 100%">
+      <PageHeader />
+    </div>
   </main>
 </template>

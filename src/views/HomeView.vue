@@ -1,4 +1,5 @@
 <script setup lang="ts">
+import AnnounceBar from "@/components/AnnounceBar.vue";
 import AtSomeOne from "@/components/AtSomeOne.vue";
 import TokenItem from "@/components/TokenItem.vue";
 import { Icon } from "@iconify/vue";
@@ -9,63 +10,66 @@ const currentWindow: Window & typeof globalThis = window;
 
 <template>
   <div class="flex flex-col">
-    <div
-      style="height: 85vh"
-      class="items-center flex flex-col gap-8 p-8 sm:mt-8 mb-16"
-    >
-      <div class="flex justify-center">
-        <a
-          class="bg-neutral-200/40 select-none text-blue-900 dark:text-blue-300 dark:bg-neutral-700/40 px-4 py-0.5 rounded-2xl font-semibold"
-        >
-          <p>欢迎</p>
-        </a>
-      </div>
+    <div style="height: 87.5vh" class="flex flex-col mb-16">
+      <AnnounceBar>
+        值此乙巳年新春佳节，Xcube Studio
+        全体成员向每一位关注与支持我们的朋友致以最诚挚的新年祝福，愿新的一年，携手共进，共创无限精彩！
+      </AnnounceBar>
+      <div class="items-center flex flex-auto flex-col gap-8 p-8 sm:mt-8">
+        <div class="flex justify-center">
+          <a
+            class="bg-neutral-200/40 select-none text-blue-900 dark:text-blue-300 dark:bg-neutral-700/40 px-4 py-0.5 rounded-2xl font-semibold"
+          >
+            <p>欢迎</p>
+          </a>
+        </div>
 
-      <div class="flex flex-col gap-8 grow">
-        <div class="hidden h-32 md:flex"></div>
-        <div class="flex flex-atuo flex-col gap-8 grow">
-          <div class="flex flex-col items-center">
-            <p class="font-bold text-2xl sm:text-4xl text-center">这里是</p>
+        <div class="flex flex-col gap-8 grow">
+          <div class="hidden h-32 md:flex"></div>
+          <div class="flex flex-atuo flex-col gap-8 grow">
+            <div class="flex flex-col items-center">
+              <p class="font-bold text-2xl sm:text-4xl text-center">这里是</p>
+              <p
+                class="font-bold text-blue-900/90 dark:text-blue-300 text-3xl sm:text-5xl leading-12 sm:leading-16 text-center"
+              >
+                Xcube Studio 工作室
+              </p>
+            </div>
             <p
-              class="font-bold text-blue-900/90 dark:text-blue-300 text-3xl sm:text-5xl leading-12 sm:leading-16 text-center"
+              class="flex text-lg text-center text-neutral-700 dark:text-neutral-400 max-w-3xl"
             >
-              Xcube Studio 工作室
+              我们是由一群热爱 Minecraft 、并从事 Minecraft
+              相关开发的开发者组成的开发团队。<br
+                class="hidden sm:flex"
+              />我们主要从事 C# .NET 相关开发，遵循 Fluent Design 设计理念。<br
+                class="hidden sm:flex"
+              />目前我们正着手 Fluent Launcher
+              启动器及其附属项目的相关维护和功能开发
+            </p>
+
+            <p
+              class="flex text-lg text-center justify-center text-neutral-700 dark:text-neutral-400 max-w-3xl"
+            >
+              我们正积极寻找着与我们志同道合的开发者加入我们 !
             </p>
           </div>
-          <p
-            class="flex text-lg text-center text-neutral-700 dark:text-neutral-400 max-w-3xl"
-          >
-            我们是由一群热爱 Minecraft 、并从事 Minecraft
-            相关开发的开发者组成的开发团队。<br
-              class="hidden sm:flex"
-            />我们主要从事 C# .NET 相关开发，遵循 Fluent Design 设计理念。<br
-              class="hidden sm:flex"
-            />目前我们正着手 Fluent Launcher
-            启动器及其附属项目的相关维护和功能开发
-          </p>
-
-          <p
-            class="flex text-lg text-center justify-center text-neutral-700 dark:text-neutral-400 max-w-3xl"
-          >
-            我们正积极寻找着与我们志同道合的开发者加入我们 !
-          </p>
         </div>
-      </div>
 
-      <div class="flex flex-wrap justify-center gap-2">
-        <TokenItem Glyph="fluent:cube-20-regular" Token="Minecraft" />
-        <TokenItem Glyph="fluent:code-cs-16-regular" />
-        <TokenItem
-          Glyph="fluent:window-dev-tools-20-regular"
-          Token="Windows Develop"
-        />
-        <TokenItem Glyph="fluent:app-generic-20-filled" Token="Desktop" />
-        <TokenItem Glyph="fluent:slide-text-20-regular" Token="MIT" />
-        <TokenItem Glyph="fluent:code-20-regular" Token="Open Source" />
-        <TokenItem
-          Glyph="fluent:design-ideas-20-filled"
-          Token="Fluent Design"
-        />
+        <div class="flex flex-wrap justify-center gap-2">
+          <TokenItem Glyph="fluent:cube-20-regular" Token="Minecraft" />
+          <TokenItem Glyph="fluent:code-cs-16-regular" />
+          <TokenItem
+            Glyph="fluent:window-dev-tools-20-regular"
+            Token="Windows Develop"
+          />
+          <TokenItem Glyph="fluent:app-generic-20-filled" Token="Desktop" />
+          <TokenItem Glyph="fluent:slide-text-20-regular" Token="MIT" />
+          <TokenItem Glyph="fluent:code-20-regular" Token="Open Source" />
+          <TokenItem
+            Glyph="fluent:design-ideas-20-filled"
+            Token="Fluent Design"
+          />
+        </div>
       </div>
     </div>
 

@@ -1,4 +1,8 @@
-<script setup lang="ts"></script>
+<script setup lang="ts">
+import { changeFavicon } from '@/utils/utils';
+
+document.title = "Fluent Launcher • 隐私政策";
+</script>
 
 <template>
   <div class="flex p-8 sm:p-16 justify-center items-center">
