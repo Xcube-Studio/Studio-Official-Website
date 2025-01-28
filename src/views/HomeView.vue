@@ -10,7 +10,7 @@ const currentWindow: Window & typeof globalThis = window;
 
 <template>
   <div class="flex flex-col">
-    <div style="height: 87.5vh" class="flex flex-col mb-16">
+    <div style="min-height: 87.5vh" class="flex flex-col mb-16">
       <AnnounceBar>
         值此乙巳年新春佳节，Xcube Studio
         全体成员向每一位关注与支持我们的朋友致以最诚挚的新年祝福，愿新的一年，携手共进，共创无限精彩！
