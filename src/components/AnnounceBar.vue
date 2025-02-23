@@ -1,7 +1,7 @@
 <script setup lang="ts">
 import { useAttrs } from "vue";
 import { Icon } from "@iconify/vue";
-const attrs = useAttrs();
+const attrs = useAttrs() as Record<string, unknown>;
 </script>
 
 <template>

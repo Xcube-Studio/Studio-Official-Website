@@ -17,7 +17,7 @@ const props = defineProps({
   },
 });
 
-const attrs = useAttrs();
+const attrs = useAttrs() as Record<string, unknown>;
 const emit = defineEmits();
 
 const buttonId = ref(`icon-button-${Math.random().toString(36).substr(2, 9)}`);

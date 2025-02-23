@@ -12,7 +12,7 @@ const props = defineProps({
   },
 });
 
-const attrs = useAttrs();
+const attrs = useAttrs() as Record<string, unknown>;
 const emit = defineEmits();
 
 const handleClick = (event: MouseEvent) => {
