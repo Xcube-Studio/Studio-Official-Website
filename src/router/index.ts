@@ -2,9 +2,12 @@ import { createRouter, createWebHistory } from "vue-router";
 import HomeView from "../views/HomeView.vue";
 import ProjectsView from "../views/ProjectsView.vue";
 import NewsView from "@/views/NewsView.vue";
-import NotFoundView from "@/views/error-views/NotFoundView.vue";
+
+import FluentLauncherIndex from "@/views/fluent-launcher/Index.vue";
 import FluentLauncherPrivacyView from "@/views/fluent-launcher/PrivacyView.vue";
+
 import UnderConstructionView from "@/views/error-views/UnderConstructionView.vue";
+import NotFoundView from "@/views/error-views/NotFoundView.vue";
 
 const router = createRouter({
   history: createWebHistory(import.meta.env.BASE_URL),
@@ -23,6 +26,11 @@ const router = createRouter({
       path: "/news",
       name: "news",
       component: NewsView,
+    },
+    {
+      path: "/fluent-launcher",
+      name: "Fluent-Launcher",
+      component: FluentLauncherIndex,
     },
     {
       path: "/fluent-launcher/privacy",

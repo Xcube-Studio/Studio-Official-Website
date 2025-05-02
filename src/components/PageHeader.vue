@@ -38,7 +38,7 @@ const navigationCloseClick = () => {
 };
 
 router.beforeEach((to, from, next) => {
-  if (to.path.includes("/fluent-launcher/")) {
+  if (to.path.includes("/fluent-launcher")) {
     headerIcon.value = "/fluent-launcher-icon.png";
     header.value = "Fluent Launcher";
 

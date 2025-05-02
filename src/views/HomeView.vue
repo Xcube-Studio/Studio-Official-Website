@@ -86,7 +86,7 @@ const currentWindow: Window & typeof globalThis = window;
         <div class="grow max-w-32"></div>
         <div class="flex flex-col gap-2 sm:gap-4 md:pl-8 justify-center">
           <a
-            href="https://apps.microsoft.com/detail/9P4NQQXQ942P?hl=zh-cn&gl=CN&ocid=pdpshare"
+            href="/fluent-launcher"
             class="font-semibold text-xl sm:text-2xl hover:underline text-blue-900 dark:text-blue-300 select-none"
           >
             <p>Fluent Launcher 启动器</p>
@@ -95,7 +95,7 @@ const currentWindow: Window & typeof globalThis = window;
           <p
             class="flex flex-auto md:flex-none text-md sm:text-lg text-neutral-700 dark:text-neutral-400 max-w-3xl"
           >
-            基于 .NET 8 以及 WinUI3 技术开发的 Minecraft Java 版启动器 <br />
+            基于 .NET 9 以及 WinUI3 技术开发的 Minecraft Java 版启动器 <br />
             专为 Windows 11 设计的 Minecraft 启动器 <br />
             提供简洁、流畅的视觉体验
           </p>
