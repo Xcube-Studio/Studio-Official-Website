@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { Icon } from "@iconify/vue";
 import { useRouter } from "vue-router";
-document.title = "Xcube Studio • 项目";
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
+document.title = `${t('xcube_studio_title')} - ${t('projects')}`;
 
 const router = useRouter();
 router.push("/under-construction");
@@ -9,8 +11,7 @@ router.push("/under-construction");
 
 <template>
   <main class="h-screen">
-    <p>AAA</p>
-  </main>
+      </main>
 </template>
 
 <style>

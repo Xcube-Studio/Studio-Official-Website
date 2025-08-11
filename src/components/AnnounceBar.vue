@@ -1,7 +1,9 @@
 <script setup lang="ts">
 import { useAttrs } from "vue";
+import { useI18n } from 'vue-i18n';
 import { Icon } from "@iconify/vue";
 const attrs = useAttrs() as Record<string, unknown>;
+const { t } = useI18n();
 </script>
 
 <template>
@@ -18,7 +20,7 @@ const attrs = useAttrs() as Record<string, unknown>;
           icon="fluent:megaphone-loud-20-filled"
           class="w-5 h-5"
         />
-        <p class="text-nowrap">公告：</p>
+        <p class="text-nowrap">{{ t('announcement') }}：</p>
       </div>
       <slot> </slot>
     </div>

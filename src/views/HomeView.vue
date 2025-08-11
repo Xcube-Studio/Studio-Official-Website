@@ -3,7 +3,9 @@
 import AtSomeOne from "@/components/AtSomeOne.vue";
 import TokenItem from "@/components/TokenItem.vue";
 import { Icon } from "@iconify/vue";
-document.title = "Xcube Studio • 主页";
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
+document.title = `${t('xcube_studio_title')} • ${t('home')}`;
 
 const currentWindow: Window & typeof globalThis = window;
 </script>
@@ -20,7 +22,7 @@ const currentWindow: Window & typeof globalThis = window;
           <a
             class="bg-neutral-200/40 select-none text-blue-900 dark:text-blue-300 dark:bg-neutral-700/40 px-4 py-0.5 rounded-2xl font-semibold"
           >
-            <p>欢迎</p>
+            <p>{{ t('welcome') }}</p>
           </a>
         </div>
 
@@ -28,29 +30,23 @@ const currentWindow: Window & typeof globalThis = window;
           <div class="hidden h-32 md:flex"></div>
           <div class="flex flex-atuo flex-col gap-8 grow">
             <div class="flex flex-col items-center">
-              <p class="font-bold text-2xl sm:text-4xl text-center">这里是</p>
+              <p class="font-bold text-2xl sm:text-4xl text-center">{{ t('here_is') }}</p>
               <p
                 class="font-bold text-blue-900/90 dark:text-blue-300 text-3xl sm:text-5xl leading-12 sm:leading-16 text-center"
               >
-                Xcube Studio 工作室
+                {{ t('xcube_studio') }}
               </p>
             </div>
             <p
               class="flex text-lg text-center text-neutral-700 dark:text-neutral-400 max-w-3xl"
             >
-              我们是由一群热爱 Minecraft 、并从事 Minecraft
-              相关开发的开发者组成的开发团队。<br
-                class="hidden sm:flex"
-              />我们主要从事 C# .NET 相关开发，遵循 Fluent Design 设计理念。<br
-                class="hidden sm:flex"
-              />目前我们正着手 Fluent Launcher
-              启动器及其附属项目的相关维护和功能开发
+              {{ t('description') }}
             </p>
 
             <p
               class="flex text-lg text-center justify-center text-neutral-700 dark:text-neutral-400 max-w-3xl"
             >
-              我们正积极寻找着与我们志同道合的开发者加入我们 !
+              {{ t('looking_for_developers') }}
             </p>
           </div>
         </div>
@@ -77,7 +73,7 @@ const currentWindow: Window & typeof globalThis = window;
       class="flex flex-col p-8 sm:p-16 bg-neutral-200/30 dark:bg-neutral-800/30 gap-4"
     >
       <p class="flex text-center font-bold text-3xl sm:text-5xl sm:leading-16">
-        热门项目
+        {{ t('popular_projects') }}
       </p>
 
       <div
@@ -89,15 +85,13 @@ const currentWindow: Window & typeof globalThis = window;
             href="/fluent-launcher"
             class="font-semibold text-xl sm:text-2xl hover:underline text-blue-900 dark:text-blue-300 select-none"
           >
-            <p>Fluent Launcher 启动器</p>
+            <p>{{ t('fluent_launcher') }}</p>
           </a>
 
           <p
             class="flex flex-auto md:flex-none text-md sm:text-lg text-neutral-700 dark:text-neutral-400 max-w-3xl"
+            v-html="t('fluent_launcher_home_desc')"
           >
-            基于 .NET 9 以及 WinUI3 技术开发的 Minecraft Java 版启动器 <br />
-            专为 Windows 11 设计的 Minecraft 启动器 <br />
-            提供简洁、流畅的视觉体验
           </p>
 
           <div class="flex flex-wrap justify-left gap-2 max-w-100 mt-4">
@@ -136,14 +130,13 @@ const currentWindow: Window & typeof globalThis = window;
           <div
             class="items-center hidden md:flex text-md text-neutral-700 dark:text-neutral-400 max-w-3xl mt-8"
           >
-            目前主要由
+            {{ t('maintained_by') }}
             <AtSomeOne
               Name="natsurainko"
               href="https://github.com/natsurainko"
             />
-            和
+            {{ t('and') }}
             <AtSomeOne Name="gaviny82" href="https://github.com/gaviny82" />
-            进行维护
           </div>
         </div>
 
@@ -174,14 +167,13 @@ const currentWindow: Window & typeof globalThis = window;
             href="https://github.com/Xcube-Studio/Natsurainko.FluentCore"
             class="font-semibold text-xl sm:text-2xl hover:underline text-blue-900 dark:text-blue-300 select-none"
           >
-            <p>Fluent Core 启动核心</p>
+            <p>{{ t('fluent_core') }}</p>
           </a>
 
           <p
             class="flex flex-auto md:flex-none text-md sm:text-lg text-neutral-700 dark:text-neutral-400 max-w-3xl"
+            v-html="t('fluent_core_desc')"
           >
-            基于 .NET 8 的跨平台的模块化 Minecraft 启动核心<br />
-            提供简单的模块化调用，简化开发流程
           </p>
 
           <div class="flex flex-wrap justify-left gap-2 max-w-100 mt-4">
@@ -212,14 +204,13 @@ const currentWindow: Window & typeof globalThis = window;
           <div
             class="items-center hidden md:flex text-md text-neutral-700 dark:text-neutral-400 max-w-3xl mt-8"
           >
-            目前主要由
+            {{ t('maintained_by') }}
             <AtSomeOne
               Name="natsurainko"
               href="https://github.com/natsurainko"
             />
-            和
+            {{ t('and') }}
             <AtSomeOne Name="gaviny82" href="https://github.com/gaviny82" />
-            进行维护
           </div>
         </div>
 
@@ -236,18 +227,17 @@ const currentWindow: Window & typeof globalThis = window;
           <a
             class="bg-neutral-200/40 select-none text-blue-900 dark:text-blue-300 dark:bg-neutral-700/40 px-4 py-0.5 rounded-2xl font-semibold"
           >
-            <p>欢迎</p>
+            <p>{{ t('welcome') }}</p>
           </a>
         </div>
 
-        <p class="font-bold text-3xl sm:text-5xl sm:leading-16 text-center">
-          有好的开源创意？<br />加入我们，<br class="sm:hidden" />一起实现！
+        <p class="font-bold text-3xl sm:text-5xl sm:leading-16 text-center" v-html="t('good_idea')">
         </p>
 
         <p
           class="flex text-lg text-center text-neutral-700 dark:text-neutral-400 max-w-3xl"
         >
-          我们正积极寻找着与我们志同道合的开发者加入我们 !
+          {{ t('looking_for_developers') }}
         </p>
 
         <fluent-button
@@ -260,7 +250,7 @@ const currentWindow: Window & typeof globalThis = window;
         >
           <div class="flex gap-2 items-center">
             <Icon icon="fluent:chat-add-20-filled" class="w-6 h-6" />
-            <p class="text-lg">加入我们</p>
+            <p class="text-lg">{{ t('join_us') }}</p>
           </div>
         </fluent-button>
       </div>
