@@ -3,9 +3,11 @@ import { changeFavicon } from "@/utils/utils";
 import { Icon } from "@iconify/vue";
 import IconButton from "../../components/IconButton.vue";
 import { ref } from "vue";
-document.title = "Fluent Launcher • 启动器";
+import { useI18n } from 'vue-i18n';
 const _window = window;
 const arch = ref("x64");
+const { t } = useI18n();
+document.title = t('fluent_launcher_title');
 </script>
 
 <template>
@@ -28,13 +30,13 @@ const arch = ref("x64");
             <h
               class="font-bold text-neutral-900/80 dark:text-neutral-50 md:text-left drop-shadow-lg text-3xl md:text-5xl leading-10 text-center select-none transition"
             >
-              Fluent Launcher
+              {{ t('fluent_launcher') }}
             </h>
 
             <p
               class="font-bold text-neutral-900/80 dark:text-neutral-50 drop-shadow-lg text-lg leading-6 select-none transition"
             >
-              专为 Windows 11 设计的 Minecraft 启动器，提供简洁、流畅的视觉体验
+              {{ t('fluent_launcher_desc') }}
             </p>
 
             <div
@@ -55,7 +57,7 @@ const arch = ref("x64");
                     icon="fluent:store-microsoft-20-filled"
                     class="w-5 h-5"
                   />
-                  从 Microsoft Store 安装
+                  {{ t('install_from_msstore') }}
                 </div>
               </fluent-button>
 
@@ -74,7 +76,7 @@ const arch = ref("x64");
                       icon="fluent:arrow-download-20-regular"
                       class="w-5 h-5"
                     />
-                    安装 Fluent Launcher 预览版本 ({{ arch }})
+                    {{ t('install_preview') }} ({{ arch }})
                   </div>
                 </fluent-button>
                 <fluent-menu-button
@@ -89,12 +91,12 @@ const arch = ref("x64");
                   <fluent-menu-item
                     class="bg-transparent pl-2 pr-5 dark:text-neutral-200 text-neutral-900 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition"
                     @click="() => (arch = 'x64')"
-                    >适用于 x64 架构</fluent-menu-item
+                    >{{ t('for_x64') }}</fluent-menu-item
                   >
                   <fluent-menu-item
                     class="bg-transparent pl-2 pr-5 dark:text-neutral-200 text-neutral-900 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition"
                     @click="() => (arch = 'arm64')"
-                    >适用于 arm64 架构</fluent-menu-item
+                    >{{ t('for_arm64') }}</fluent-menu-item
                   >
                 </fluent-menu-list>
               </fluent-menu>
@@ -114,17 +116,17 @@ const arch = ref("x64");
         <a
           class="bg-neutral-200/40 select-none text-blue-900 dark:text-blue-300 dark:bg-neutral-700/40 px-4 py-0.5 rounded-2xl font-bold mb-2"
         >
-          <p>Design</p>
+          <p>{{ t('design') }}</p>
         </a>
         <p
           class="flex font-bold text-3xl sm:text-5xl sm:leading-16 text-neutral-800 dark:text-neutral-100 transition"
         >
-          为 Windows 设计的用户界面
+          {{ t('ui_for_windows') }}
         </p>
         <p
           class="text-lg font-semibold mt-2 text-neutral-700 dark:text-neutral-300 transition"
         >
-          从 Windows 任务栏、开始菜单快速启动游戏，而无需打开启动器
+          {{ t('ui_desc') }}
         </p>
       </div>
       <div class="flex flex-row grow items-center justify-end">
@@ -147,17 +149,17 @@ const arch = ref("x64");
         <a
           class="bg-neutral-200/40 select-none text-blue-900 dark:text-blue-300 dark:bg-neutral-700/40 px-4 py-0.5 rounded-2xl font-bold mb-2"
         >
-          <p>Feature</p>
+          <p>{{ t('feature') }}</p>
         </a>
         <p
           class="flex font-bold text-3xl sm:text-5xl sm:leading-16 text-neutral-800 dark:text-neutral-100 transition"
         >
-          切合 Windows 设计的便捷功能
+          {{ t('convenient_features') }}
         </p>
         <p
           class="text-lg font-semibold mt-2 text-neutral-700 dark:text-neutral-300 transition"
         >
-          从 Windows 任务栏、开始菜单快速启动游戏，而无需打开启动器
+          {{ t('feature_desc') }}
         </p>
       </div>
     </div>
@@ -166,17 +168,17 @@ const arch = ref("x64");
         <a
           class="bg-neutral-200/40 select-none text-blue-900 dark:text-blue-300 dark:bg-neutral-700/40 px-4 py-0.5 rounded-2xl font-bold mb-2"
         >
-          <p>Storage</p>
+          <p>{{ t('storage') }}</p>
         </a>
         <p
           class="flex font-bold text-3xl sm:text-5xl sm:leading-16 text-neutral-800 dark:text-neutral-100 transition"
         >
-          使用 Windows 原生存储容器
+          {{ t('native_storage') }}
         </p>
         <p
           class="text-lg font-semibold mt-2 text-neutral-700 dark:text-neutral-300 transition"
         >
-          完全由 Windows 管理的文件容器，不在其他地方产生冗余文件
+          {{ t('storage_desc') }}
         </p>
       </div>
       <div class="flex flex-row grow items-center justify-end">
@@ -199,17 +201,17 @@ const arch = ref("x64");
         <a
           class="bg-neutral-200/40 select-none text-blue-900 dark:text-blue-300 dark:bg-neutral-700/40 px-4 py-0.5 rounded-2xl font-bold mb-2"
         >
-          <p>Update</p>
+          <p>{{ t('update') }}</p>
         </a>
         <p
           class="flex font-bold text-3xl sm:text-5xl sm:leading-16 text-neutral-800 dark:text-neutral-100 transition"
         >
-          从 Microsoft Store 获取更新
+          {{ t('update_from_msstore') }}
         </p>
         <p
           class="text-lg font-semibold mt-2 text-neutral-700 dark:text-neutral-300 transition"
         >
-          从 Microsoft Store 更新接受稳定版本更新，有效管理启动器更新
+          {{ t('update_desc') }}
         </p>
       </div>
     </div>

@@ -6,6 +6,14 @@ import { onMounted, ref } from "vue";
 import { useRouter } from "vue-router";
 import IconButton from "./IconButton.vue";
 import { changeFavicon } from "@/utils/utils";
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
+const { locale } = useI18n();
+const currentLanguage = ref(locale.value);
+const changeLanguage = (lang: string) => {
+  locale.value = lang;
+  currentLanguage.value = lang;
+};
 const router = useRouter();
 
 const headerIcon = ref<string>("/xcube-studio.png");
@@ -45,7 +53,7 @@ router.beforeEach((to, from, next) => {
     changeFavicon("/fluent-launcher-icon.png");
   } else {
     headerIcon.value = "/xcube-studio.png";
-    header.value = "Xcube Studio";
+    header.value = t('xcube_studio_title');
 
     changeFavicon("/xcube-studio.png");
   }
@@ -91,7 +99,7 @@ function navigate(path: string) {
               class="flex justify-center items-center gap-1 px-2.5 rounded-sm select-none"
             >
               <Icon icon="fluent:home-20-regular" class="w-5 h-5" />
-              <p>主页</p>
+              <p>{{ t('home') }}</p>
             </li>
           </RouterLink>
 
@@ -104,7 +112,7 @@ function navigate(path: string) {
               class="flex justify-center items-center gap-1 px-2.5 rounded-sm select-none"
             >
               <Icon icon="fluent:apps-20-filled" class="w-5 h-5" />
-              <p>项目</p>
+              <p>{{ t('projects') }}</p>
             </li>
           </RouterLink>
 
@@ -117,7 +125,7 @@ function navigate(path: string) {
               class="flex justify-center items-center gap-1 px-2.5 rounded-sm select-none"
             >
               <Icon icon="fluent:news-20-regular" class="w-5 h-5" />
-              <p>消息</p>
+              <p>{{ t('news') }}</p>
             </li>
           </RouterLink>
         </ul>
@@ -125,9 +133,48 @@ function navigate(path: string) {
     </div>
 
     <div class="flex grow"></div>
+      <div class="flex gap-1 items-center">
+        <fluent-menu>
+        <fluent-menu-button
+          id="language-button"
+          class="min-w-0 px-2 py-1.5 rounded-sm transition bg-transparent dark:text-neutral-200 text-neutral-900 hover:bg-neutral-200 dark:hover:bg-neutral-700"
+          slot="trigger"
+          size="small"
+        >
+          <Icon slot="end" icon="fluent:globe-20-regular" class="w-5 h-5" />
+        </fluent-menu-button>
 
-    <div class="flex justify-end flex-auto gap-2">
-      <fluent-menu>
+        <fluent-menu-list
+          style="margin-left: -36px"
+          class="min-w-4 rounded-md gap-1 p-1 mt-2 backdrop-blur-md bg-neutral-100/80 dark:bg-neutral-800/80"
+        >
+          <fluent-menu-item
+            @click="() => changeLanguage('zh')"
+            class="bg-transparent pl-2 pr-5 dark:text-neutral-200 text-neutral-900 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition"
+            role="menuitemradio"
+            :checked="currentLanguage == 'zh'"
+          >{{ t('chinese') }}</fluent-menu-item>
+          <fluent-menu-item
+            @click="() => changeLanguage('ru')"
+            class="bg-transparent pl-2 pr-5 dark:text-neutral-200 text-neutral-900 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition"
+            role="menuitemradio"
+            :checked="currentLanguage == 'ru'"
+          >{{ t('russian') }}</fluent-menu-item>
+          <fluent-menu-item
+            @click="() => changeLanguage('uk')"
+            class="bg-transparent pl-2 pr-5 dark:text-neutral-200 text-neutral-900 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition"
+            role="menuitemradio"
+            :checked="currentLanguage == 'uk'"
+          >{{ t('ukrainian') }}</fluent-menu-item>
+          <fluent-menu-item
+            @click="() => changeLanguage('en')"
+            class="bg-transparent pl-2 pr-5 dark:text-neutral-200 text-neutral-900 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition"
+            role="menuitemradio"
+            :checked="currentLanguage == 'en'"
+          >{{ t('english') }}</fluent-menu-item>
+        </fluent-menu-list>
+      </fluent-menu>
+        <fluent-menu>
         <fluent-menu-button
           id="theme-button"
           class="min-w-0 px-2 py-1.5 rounded-sm transition bg-transparent dark:text-neutral-200 text-neutral-900 hover:bg-neutral-200 dark:hover:bg-neutral-700"
@@ -146,34 +193,34 @@ function navigate(path: string) {
             class="bg-transparent pl-2 pr-5 dark:text-neutral-200 text-neutral-900 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition"
             role="menuitemradio"
             :checked="currentTheme == 'auto'"
-            >跟随系统</fluent-menu-item
+            >{{ t('follow_system') }}</fluent-menu-item
           >
           <fluent-menu-item
             @click="() => switchTheme('light')"
             class="bg-transparent pl-2 pr-5 dark:text-neutral-200 text-neutral-900 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition"
             role="menuitemradio"
             :checked="currentTheme == 'light'"
-            >亮色</fluent-menu-item
+            >{{ t('light') }}</fluent-menu-item
           >
           <fluent-menu-item
             @click="() => switchTheme('dark')"
             class="bg-transparent pl-2 pr-5 dark:text-neutral-200 text-neutral-900 hover:bg-neutral-200 dark:hover:bg-neutral-700 transition"
             role="menuitemradio"
             :checked="currentTheme == 'dark'"
-            >暗色</fluent-menu-item
+            >{{ t('dark') }}</fluent-menu-item
           >
         </fluent-menu-list>
       </fluent-menu>
 
-      <div class="gap-2 justify-end sm:flex hidden">
+      <div class="flex gap-1 justify-end sm:flex hidden">
         <IconButton
           Glyph="fluent:warning-20-filled"
-          ToolTip="报告问题"
+          :ToolTip="t('report_issue')"
           href="https://github.com/Xcube-Studio/Studio-Official-Website/issues"
         />
         <IconButton
           Glyph="fluent:code-20-regular"
-          ToolTip="网站仓库"
+          :ToolTip="t('website_repo')"
           href="https://github.com/Xcube-Studio/Studio-Official-Website"
         />
       </div>
@@ -194,7 +241,7 @@ function navigate(path: string) {
           anchor="navigation-open-button"
           class="p-2 mt-2"
         >
-          打开导航
+          {{ t('open_navigation') }}
         </fluent-tooltip>
       </div>
 
@@ -211,12 +258,12 @@ function navigate(path: string) {
               <div class="gap-2 py-3 px-3 flex justify-start">
                 <IconButton
                   Glyph="fluent:warning-20-filled"
-                  ToolTip="报告问题"
+                  :ToolTip="t('report_issue')"
                   href="https://github.com/Xcube-Studio/Studio-Official-Website/issues"
                 />
                 <IconButton
                   Glyph="fluent:code-20-regular"
-                  ToolTip="网站仓库"
+                  :ToolTip="t('website_repo')"
                   href="https://github.com/Xcube-Studio/Studio-Official-Website"
                 />
               </div>
@@ -255,7 +302,7 @@ function navigate(path: string) {
                     class="font-normal flex justify-center items-center gap-2 px-2.5 rounded-sm select-none"
                   >
                     <Icon icon="fluent:home-32-regular" class="w-5 h-5" />
-                    <p>主页</p>
+                    <p>{{ t('home') }}</p>
                   </li>
                 </fluent-tab>
                 <fluent-tab

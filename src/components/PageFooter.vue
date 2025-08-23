@@ -2,6 +2,8 @@
 import { useRouter } from "vue-router";
 import HyperlinkButton from "./HyperlinkButton.vue";
 import IconButton from "./IconButton.vue";
+import { useI18n } from 'vue-i18n';
+const { t } = useI18n();
 
 const router = useRouter();
 
@@ -25,64 +27,64 @@ function navigate(path: string) {
           <p
             class="text-3xl select-none font-semibold text-neutral-700 dark:text-white hover:text-neutral-500 dark:hover:text-neutral-300 transition"
           >
-            Xcube Studio
+            {{ t('xcube_studio_title') }}
           </p>
         </div>
         <div class="flex gap-2">
           <IconButton
             href="https://github.com/Xcube-Studio"
             Glyph="mdi:github"
-            ToolTip="GitHub"
+            :ToolTip="t('github')"
           />
           <IconButton
             href="mailto:xcubestudio@axing6.cn"
             Glyph="fluent:mail-20-filled"
-            ToolTip="邮箱"
+            :ToolTip="t('email')"
           />
           <IconButton
             href="https://qm.qq.com/q/8AKSiUUrn2"
             Glyph="ri:qq-fill"
-            ToolTip="QQ 群"
+            :ToolTip="t('qq_group')"
           />
         </div>
         <p
           class="text-md select-none font-semibold text-neutral-500 dark:text-neutral-400"
         >
-          Copyright © Xcube Studio 2022-2025
+          {{ t('copyright') }}
         </p>
       </div>
       <div class="flex md:flex-auto flex-col gap-2 items-start">
         <p
           class="text-md select-none text-neutral-600 hover:text-neutral-400 dark:text-neutral-300 dark:hover:text-neutral-50 transition"
         >
-          页面
+          {{ t('pages') }}
         </p>
         <div class="flex flex-col gap-2 items-start" style="margin-left: -12px">
-          <HyperlinkButton Content="主页" :OnClick="() => navigate('/')" />
+          <HyperlinkButton :Content="t('home')" :OnClick="() => navigate('/')" />
           <HyperlinkButton
-            Content="项目"
+            :Content="t('projects')"
             :OnClick="() => navigate('/projects')"
           />
-          <HyperlinkButton Content="消息" :OnClick="() => navigate('/news')" />
+          <HyperlinkButton :Content="t('news')" :OnClick="() => navigate('/news')" />
         </div>
       </div>
       <div class="flex md:flex-auto flex-col gap-2 items-start">
         <p
           class="text-md select-none text-neutral-600 hover:text-neutral-400 dark:text-neutral-300 dark:hover:text-neutral-50 transition"
         >
-          链接
+          {{ t('links') }}
         </p>
         <div class="flex flex-col gap-2 items-start" style="margin-left: -12px">
           <HyperlinkButton
-            Content="Fluent Launcher"
+            :Content="t('fluent_launcher')"
             href="https://github.com/Xcube-Studio/Natsurainko.FluentLauncher"
           />
           <HyperlinkButton
-            Content="Fluent Launcher 本地化"
+            :Content="t('fluent_launcher_localization')"
             href="https://github.com/Xcube-Studio/FluentLauncher.Localization"
           />
           <HyperlinkButton
-            Content="Fluent Core"
+            :Content="t('fluent_core')"
             href="https://github.com/Xcube-Studio/Natsurainko.FluentCore"
           />
         </div>
@@ -91,11 +93,11 @@ function navigate(path: string) {
         <p
           class="text-md select-none text-neutral-600 hover:text-neutral-400 dark:text-neutral-300 dark:hover:text-neutral-50 transition"
         >
-          链接
+          {{ t('legal') }}
         </p>
         <div class="flex flex-col gap-2 items-start" style="margin-left: -12px">
           <HyperlinkButton
-            Content="Fluent Launcher 隐私政策"
+            :Content="t('fluent_launcher_privacy_policy')"
             :OnClick="() => navigate('/fluent-launcher/privacy')"
           />
         </div>
